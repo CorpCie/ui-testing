@@ -8,6 +8,7 @@ module.exports = () => {
 
   const htmlLoader = require('./loaders/html-loader')();
   const scriptLoader = require('./loaders/script-loader')();
+  const stylesConfig = require('./webpack.styles')();
 
   let config = {
     devtool: 'source-map',
@@ -19,17 +20,27 @@ module.exports = () => {
     module: {
       rules: [
         scriptLoader,
-        htmlLoader
+        htmlLoader,
+        stylesConfig.scssLoader,
+        stylesConfig.cssLoader,
+        stylesConfig.imagesLoader,
+        stylesConfig.fontsLoader
       ]
     },
     resolve: {
-      extensions: ['.ts', '.js'] // enables to leave off the extension when importing
+      extensions: ['.ts', '.js'], // enables to leave off the extension when importing
+      alias: {
+        commonStyles: path.resolve(__dirname, '../app/modules/styles')
+      }
     },
     plugins: [
+      stylesConfig.extractor,
+
       // multiple bundles share some of the same dependencies
       // CommonsChunkPlugin extract those dependencies into a shared bundle to avoid duplication
       new webpack.optimize.CommonsChunkPlugin({
-        name: 'vendors'
+        name: 'vendors',
+        minChunks: Infinity
       }),
 
       new HtmlWebpackPlugin({

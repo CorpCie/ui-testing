@@ -7,7 +7,8 @@
     "_": false,
     "require": false,
     "module": false,
-    "__dirname": false
+    "__dirname": false,
+    "Buffer": false
   },
   "parserOptions":{
     "ecmaFeatures": {
@@ -43,6 +44,7 @@
 
     "arrow-body-style": [2, "as-needed"],
     "prefer-arrow-callback": 2,
-    "rest-spread-spacing": [2, "never"]
+    "rest-spread-spacing": [2, "never"],
+    "no-sync": 0
   }
 }

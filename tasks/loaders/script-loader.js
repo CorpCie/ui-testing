@@ -6,9 +6,9 @@ module.exports = () => {
   const {src} = require('../build-config');
 
   let options = {
-    test: /\.ts$/,
+    test: /\.js$/,
     include: [src.appPath],
-    loader: 'awesome-typescript-loader'
+    loader: 'babel-loader'
   };
 
   return options;

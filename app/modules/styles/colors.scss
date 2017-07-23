@@ -1,0 +1,26 @@
+$colors: (
+  "white": (
+    base: #fff
+  ),
+  "black": (
+    base: #000
+  ),
+  "dark-grey": (
+    base: #2c3e50
+  ),
+  "green": (
+    base: #18bc9c
+  )
+);
+
+@function get-color($colorName: "black", $colorVariant: "base") {
+  @return map-get(map-get($colors, $colorName), $colorVariant);
+}
+
+@mixin color($colorName, $colorVariant: "base") {
+  color: get-color($colorName, $colorVariant);
+}
+
+@mixin background($colorName, $colorVariant: "base") {
+  background-color: get-color($colorName, $colorVariant);
+}

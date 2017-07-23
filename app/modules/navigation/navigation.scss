@@ -1,0 +1,33 @@
+@import "~commonStyles/common.scss";
+
+.navbar-custom {
+  @include background("dark-grey");
+  @include font-type1;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-brand.active,
+.navbar-custom .navbar-brand:active,
+.navbar-custom .navbar-brand:focus,
+.navbar-custom .navbar-brand:hover {
+  @include color("white");
+}
+
+.navbar-custom .navbar-nav li a,
+.navbar-custom .navbar-nav li a:focus,
+.navbar-custom .navbar-nav li a:active {
+  @include color("white");
+}
+
+.navbar-custom .navbar-nav li a:hover {
+  @include color("green");
+}
+
+.navbar-custom .navbar-nav li.active a {
+  &:hover,
+  &:focus,
+  &:active {
+    @include color("white");
+    @include background("green");
+  }
+}

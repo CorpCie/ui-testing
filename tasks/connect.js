@@ -1,9 +1,8 @@
 const gulp = require('gulp');
 
-module.exports = gulp.task('connect', () => {
+module.exports = gulp.task('connect', ['i18n'], () => {
   const webpack = require('webpack');
   const serve = require('browser-sync');
-  // It uses webpack to compile assets in-memory and serve them
   const webpackDevMiddelware = require('webpack-dev-middleware');
   const webpackHotMiddelware = require('webpack-hot-middleware');
   const historyApiFallback = require('connect-history-api-fallback');

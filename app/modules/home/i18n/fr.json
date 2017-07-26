@@ -1,0 +1,28 @@
+{
+  "home": {
+    "headerTips": "Application de test en Angular 4 pour tester du code",
+    "timeline": {
+      "angular": {
+        "title": "Angular",
+        "description": "Angular 4 but no Typescript"
+      },
+      "webpack": {
+        "title": "Webpack",
+        "description": "Module bundler for modern JavaScript applications"
+      },
+      "gulp": {
+        "title": "Gulp",
+        "description": "Toolkit for automating painful or time-consuming tasks in your development "
+      },
+      "codeceptJs": {
+        "title": "CodeceptJs",
+        "description": "Modern era acceptance testing for Nodejs"
+      },
+      "browsersync": {
+        "title": "Browsersync",
+        "description": "Time-saving synchronised browser testing"
+      },
+      "summarize": "Ce sont les librairies que j'utilise pour construire cet example"
+    }
+  }
+}

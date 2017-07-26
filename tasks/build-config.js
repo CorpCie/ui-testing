@@ -18,9 +18,10 @@ module.exports = {
       '@ngx-translate/core',
       '@ngx-translate/http-loader'
     ],
-    images: path.resolve(__dirname, '../app/assets'),
+    images: path.resolve(__dirname, '../app/assets/images'),
     imagesTypes: /\.(jpg|png|svg)$/,
-    fontsTypes: /\.(|eot|ttf|woff|woff2|svg)$/,
+    fonts: path.resolve(__dirname, '../app/assets/fonts'),
+    fontsTypes: /\.(|eot|ttf|woff|woff2)$/,
     i18n: 'app/**/i18n/[A-z]*.json'
   },
 
@@ -28,7 +29,8 @@ module.exports = {
     dist: 'dist',
     distPath: path.resolve(__dirname, '../dist'),
     styleFileName: 'styles',
-    fonts: 'fonts',
-    i18n: 'assets/i18n'
+    fonts: 'assets/fonts',
+    i18n: 'assets/i18n',
+    images: 'assets/images'
   }
 };

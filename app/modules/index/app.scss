@@ -2,5 +2,21 @@
 
 html,
 body {
+  @include font-type1;
   margin: 0;
+}
+
+h1 {
+  @include font-type2;
+}
+
+h4 {
+  @include font-type3;
+}
+
+.footer {
+  @include background("dark-blue");
+  @include color("white");
+  text-align: center;
+  padding: 10px;
 }

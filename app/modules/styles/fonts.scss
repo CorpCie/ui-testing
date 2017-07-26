@@ -1,5 +1,30 @@
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src:
+  url(~fonts/OpenSans.eot?#iefix) format("embedded-opentype"),
+  url(~fonts/OpenSans.woff2) format("woff2"),
+  url(~fonts/OpenSans.woff) format("woff"),
+  url(~fonts/OpenSans.ttf) format("truetype"),
+  url(~fonts/OpenSans.svg#OpenSans) format("svg");
+}
+
 @mixin font-type1 {
-  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  font-weight: 700;
+  font-family: "Open Sans";
+  font-size: 1rem;
+  text-transform: none;
+}
+
+@mixin font-type2 {
+  font-family: "Open Sans";
+  font-size: 2rem;
+  text-transform: none;
+  font-weight: 600;
+}
+
+@mixin font-type3 {
+  font-family: "Open Sans";
+  font-size: 1.5rem;
+  text-transform: none;
 }

@@ -30,7 +30,9 @@ module.exports = () => {
     resolve: {
       extensions: ['.ts', '.js'], // enables to leave off the extension when importing
       alias: {
-        commonStyles: path.resolve(__dirname, '../app/modules/styles')
+        commonStyles: path.resolve(__dirname, '../app/modules/styles'),
+        images: src.images,
+        fonts: src.fonts
       }
     },
     plugins: [

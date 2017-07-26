@@ -1,0 +1,18 @@
+<ul class="timeline">
+  <li *ngFor="let stack of ['gulp', 'webpack', 'browsersync', 'angular', 'codeceptJs']; let odd=odd"
+      [ngClass]="{'timeline-inverted': odd}">
+    <div class="timeline-image" [ngClass]="[stack]"></div>
+    <div class="timeline-panel">
+      <div class="timeline-heading">
+        <h4 translate="home.timeline.{{stack}}.title"></h4>
+      </div>
+      <div class="timeline-body" translate="home.timeline.{{stack}}.description"></div>
+    </div>
+  </li>
+
+  <li>
+    <div class="timeline-image browser"></div>
+  </li>
+</ul>
+
+<h4 class="timeline-summarize" translate="home.timeline.summarize"></h4>

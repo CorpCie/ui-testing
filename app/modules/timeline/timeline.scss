@@ -1,0 +1,102 @@
+@import "~commonStyles/common.scss";
+
+.timeline {
+  list-style: none;
+  padding: 0;
+  position: relative;
+
+  &:before {
+    @include background("grey", "light");
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    content: "";
+    width: 2px;
+    left: 50%;
+    margin-left: -1.5px;
+  }
+
+  $logoSize: 140px;
+  $deltaPadding: 20 + $logoSize / 2;
+
+  > li {
+    margin-bottom: 50px;
+    position: relative;
+    min-height: $logoSize;
+    display: flex;
+    align-items: center;
+
+    .timeline-panel {
+      width: 50%;
+      padding: 0 $deltaPadding;
+      position: relative;
+      text-align: right;
+    }
+
+    .timeline-image {
+      @include background("dark-blue");
+      left: 50%;
+      width: $logoSize;
+      height: $logoSize;
+      margin-left: -$logoSize / 2;
+      position: absolute;
+      z-index: 100;
+      border-radius: 100%;
+      border: 7px solid get-color("grey", "light");
+      text-align: center;
+      background-size: contain;
+
+      &.gulp {
+        @include icon("gulp-logo");
+        background-size: 36%;
+      }
+
+      &.webpack {
+        @include icon("webpack-logo");
+        background-size: 75%;
+      }
+
+      &.browsersync {
+        @include icon("browsersync-logo");
+        background-size: 90%;
+      }
+
+      &.angular {
+        @include icon("angular-logo");
+        background-size: 90%;
+      }
+
+      &.codeceptJs {
+        @include image-png("codeceptjs-logo");
+        background-size: 80%;
+      }
+
+      &.browser {
+        @include icon("arrow-pen");
+        background-size: 80%;
+      }
+    }
+
+    &.timeline-inverted {
+      flex-direction: row-reverse;
+
+      .timeline-panel {
+        text-align: left;
+        padding: 0 $deltaPadding;
+      }
+    }
+
+    &:first-child {
+      margin-top: 50px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.timeline-summarize {
+  text-align: center;
+  margin-bottom: 50px;
+}

@@ -1,0 +1,11 @@
+@mixin icon($name) {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(~images/#{$name}.svg);
+}
+
+@mixin image-png($name) {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(~images/#{$name}.png);
+}

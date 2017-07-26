@@ -5,7 +5,6 @@ module.exports = () => {
 
   let imagesLoader = {
     test: src.imagesTypes,
-    include: [src.images],
     loaders: [
       `${fileLoader + dest.images}/[name].[ext]`
     ]

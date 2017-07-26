@@ -1,0 +1,43 @@
+@import "~commonStyles/common.scss";
+
+header {
+  @include background("dark-blue");
+  @include color("white");
+  text-align: center;
+}
+
+header .container {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.home-icon {
+  @include icon("testing");
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 20px;
+  background-size: contain;
+}
+
+.star-light {
+  padding: 0;
+  border-top: solid 5px get-color("white");
+  max-width: 250px;
+  margin: 25px auto 30px;
+
+  $starSize: 25px;
+
+  &:after {
+    @include background("dark-blue");
+    @include color("white");
+    @include icon("star");
+    background-size: contain;
+    content: " ";
+    width: $starSize;
+    height: $starSize;
+    display: inline-block;
+    position: relative;
+    top: -17px;
+    padding: 0 $starSize;
+  }
+}

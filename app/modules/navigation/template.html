@@ -1,18 +1,18 @@
 <div class="container">
   <div class="navbar-header page-scroll">
-    <a class="navbar-brand" translate="global.siteName"></a>
+    <a class="navbar-brand" translate="global.siteName" routerLink="/home"></a>
   </div>
 
   <div class="collapse navbar-collapse" >
     <ul class="nav navbar-nav navbar-right">
       <li class="page-scroll">
-        <a>Portfolio</a>
+        <a translate="navigation.form" routerLink="/home" routerLinkActive="active"></a>
       </li>
       <li class="page-scroll">
-        <a href="#about" translate="navigation.about"></a>
+        <a translate="navigation.apiMock" routerLink="/apimock" routerLinkActive="active"></a>
       </li>
-      <li class="page-scroll">
-        <a href="#contact">Contact</a>
+      <li class="page-scroll" routerLink="/failed-test" routerLinkActive="active">
+        <a translate="navigation.failedTests"></a>
       </li>
     </ul>
   </div>

@@ -20,16 +20,25 @@
   line-height: normal;
   height: auto;
 
-  &:hover {
+  &:hover,
+  &:active,
+  &:focus {
     @include color("white");
   }
 }
 
 .navbar-custom .navbar-nav li a {
   @include color("white");
+  margin-right: 1px;
 
-  &:hover {
+  &:hover,
+  &.active {
     @include color("white");
     @include background("green");
+  }
+
+  &:active,
+  &:focus {
+    @include color("white");
   }
 }

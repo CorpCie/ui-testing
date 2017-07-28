@@ -8,6 +8,7 @@ module.exports = gulp.task('connect', ['i18n'], () => {
   const historyApiFallback = require('connect-history-api-fallback');
   const colorsSupported = require('supports-color');
   const {src} = require('./build-config');
+  const routesMapping = require('../api-mocks/routes-mapping');
 
   let config = require('./webpack.config')();
   // Enable livereload for app entry point
@@ -30,7 +31,6 @@ module.exports = gulp.task('connect', ['i18n'], () => {
     notify: false,
     server: {baseDir: 'dist'},
     middleware: [
-      historyApiFallback(),
       webpackDevMiddelware(compiler, {
         hot: true,
         stats: {
@@ -42,7 +42,12 @@ module.exports = gulp.task('connect', ['i18n'], () => {
         },
         publicPath: config.output.publicPath
       }),
-      webpackHotMiddelware(compiler)
+      webpackHotMiddelware(compiler),
+      {
+        route: '/myapi', // api routes start for all your uris
+        handle: routesMapping.middleware // API specifications (created by ApiMocks instance)
+      },
+      historyApiFallback()
     ]
   });
 });

@@ -1,5 +1,7 @@
 {
   "navigation": {
-    "about": "A propos"
+    "form": "Formulaire",
+    "apiMock": "API mock",
+    "failedTests": "Testes en échec"
   }
 }

@@ -14,9 +14,6 @@ h4 {
   @include font-type3;
 }
 
-.footer {
-  @include background("dark-blue");
-  @include color("white");
-  text-align: center;
-  padding: 10px;
+.outlet-container {
+  margin-top: 70px;
 }

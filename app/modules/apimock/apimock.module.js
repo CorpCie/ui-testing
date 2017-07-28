@@ -1,22 +1,27 @@
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 
-import {NavigationComponent} from './navigation.component';
 import {InternationalizationModule} from '../internationalization/translate.module';
 
-export class NavigationModule {}
+import {ApimockComponent} from './apimock.component';
 
-NavigationModule.annotations = [
+export class ApimockModule {}
+
+const apimockRoutes = [
+  {path: 'apimock', component: ApimockComponent}
+];
+
+ApimockModule.annotations = [
   new NgModule({
     imports: [
       InternationalizationModule,
-      RouterModule
+      RouterModule.forChild(apimockRoutes)
     ],
     declarations: [
-      NavigationComponent
+      ApimockComponent
     ],
     exports: [
-      NavigationComponent
+      RouterModule
     ]
   })
 ];

@@ -1,4 +1,4 @@
-const ApiMocks = require('api-mocks').ApiMocks;
+const {ApiMocks} = require('api-mocks');
 const membersGetRoute = require('./members/members-get-route');
 
 let routes = {

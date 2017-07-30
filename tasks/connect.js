@@ -8,7 +8,7 @@ module.exports = gulp.task('connect', ['i18n'], () => {
   const historyApiFallback = require('connect-history-api-fallback');
   const colorsSupported = require('supports-color');
   const {src} = require('./build-config');
-  const routesMapping = require('../api-mocks/routes-mapping');
+  const routesMapping = require('../apimocks/routes-mapping');
 
   let config = require('./webpack.config')();
   // Enable livereload for app entry point

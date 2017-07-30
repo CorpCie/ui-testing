@@ -1,4 +1,4 @@
-const Route = require('api-mocks').Route;
+const {Route} = require('api-mocks');
 const _ = require('lodash');
 
 const memberDefinition = require('./member-definition');

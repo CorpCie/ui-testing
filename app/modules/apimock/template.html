@@ -2,19 +2,22 @@
   <h1 translate="apimock.title"></h1>
 
   <div class="row">
-    <div class="col-lg-3 col-md-4 col-sm-6">
-      <div class="panel panel-blue userlist">
+    <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let member of members; let index = index">
+        <div class="panel panel-{{getPanelColor(index)}} userlist">
         <div class="panel-body text-center">
           <div class="userprofile">
-            <div class="userpic"> <img src="https://bootdey.com/img/Content/avatar/avatar5.png" alt="" class="userpicimg"> </div>
-            <h3 class="username">John Doe</h3>
-            <p>New York, USA</p>
+            <div class="userpic"> <img [src]="member.attributes.picture" alt="" class="userpicimg"> </div>
+            <h3 class="username">{{member.attributes.nickname}}</h3>
+            <p>{{member.attributes.geo.city.name}}, {{member.attributes.geo.country.code}}</p>
           </div>
-          <p><a href="mailto:info@maxartkiller.in">info@maxartkiller.in</a> | +91 000 000 0000</p>
+          <p>
+            <a class="block-link" href="mailto:{{member.attributes.email}}">{{member.attributes.email}}</a>
+            <a class="block-link" href="tel:{{member.attributes.phone}}">{{member.attributes.phone}}</a>
+          </p>
           <div class="socials tex-center">
-            <a href="" class="btn btn-circle btn-primary "><i class="fa fa-facebook"></i></a>
-            <a href="" class="btn btn-circle btn-danger "><i class="fa fa-google-plus"></i></a>
-            <a href="" class="btn btn-circle btn-info "><i class="fa fa-twitter"></i></a>
+            <a href="" class="btn btn-circle btn-primary facebook"></a>
+            <a href="" class="btn btn-circle btn-danger google-plus"></a>
+            <a href="" class="btn btn-circle btn-info twitter"></a>
           </div>
         </div>
       </div>

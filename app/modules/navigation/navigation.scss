@@ -1,7 +1,7 @@
 @import "~commonStyles/common.scss";
 
 .navbar-custom {
-  @include background("dark-blue");
+  @include background("blue", "dark");
   @include font-type1;
 }
 

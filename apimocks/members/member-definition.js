@@ -36,6 +36,15 @@ const MemberSchema = {
                 }
               }
             },
+            picture: {
+              type: 'string',
+              chance: {
+                url: {
+                  domain: 'localhost:3000',
+                  path: 'assets/avatars'
+                }
+              }
+            },
             geo: {
               $ref: 'geo'
             }
@@ -44,6 +53,7 @@ const MemberSchema = {
             'nickname',
             'email',
             'phone',
+            'picture',
             'geo'
           ]
         }

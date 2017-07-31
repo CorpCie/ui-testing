@@ -1,6 +1,11 @@
 @import "~commonStyles/common.scss";
 
 .apimock {
+  .block-link {
+    @include color("white");
+    display: block;
+  }
+
   .userprofile {
     width: 100%;
     float: left;
@@ -55,6 +60,22 @@
     width: 100%;
   }
 
+  .panel-blue {
+    @include background("blue");
+  }
+
+  .panel-red {
+    @include background("red");
+  }
+
+  .panel-yellow {
+    @include background("yellow");
+  }
+
+  .panel-green {
+    @include background("green", "pastel");
+  }
+
   .btn-circle {
     width: 30px;
     height: 30px;
@@ -62,9 +83,18 @@
     border-radius: 15px;
     text-align: center;
     font-size: 12px;
+    background-size: 50%;
   }
 
-  .panel-blue {
-    background-color: #03a9f4;
+  .facebook {
+    @include icon("facebook-symbol");
+  }
+
+  .google-plus {
+    @include icon("google-plus-symbol");
+  }
+
+  .twitter {
+    @include icon("twitter-symbol");
   }
 }

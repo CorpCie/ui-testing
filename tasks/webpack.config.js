@@ -3,6 +3,7 @@ module.exports = () => {
   const path = require('path');
   const {src} = require('./build-config');
   const HtmlWebpackPlugin = require('html-webpack-plugin');
+  const CopyWebpackPlugin = require('copy-webpack-plugin');
 
   const output = require('./webpack.output')();
 
@@ -55,7 +56,13 @@ module.exports = () => {
       new webpack.ContextReplacementPlugin(
         /angular(\\|\/)core(\\|\/)@angular/,
         path.resolve(__dirname, '../src')
-      )
+      ),
+
+      // copy avatars just for mock testing purpose
+      new CopyWebpackPlugin([{
+        from: path.resolve(__dirname, '../apimocks/avatars'),
+        to: 'assets/avatars'
+      }])
     ]
   };
 

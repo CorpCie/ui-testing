@@ -11,7 +11,13 @@ class MembersGetRoute extends Route {
       total: 7,
       total_pages: 7
     };
-    let data = _.map(new Array(pagination.per_page), () => memberDefinition.getMock());
+    let data = _.map(new Array(pagination.per_page), (value, index) => {
+      let member = memberDefinition.getMock().data;
+      let avatarIndexes = [1, 2, 3, 4, 5, 6, 7, 8];
+      member.attributes.picture += `/avatar${avatarIndexes[index % avatarIndexes.length]}.png`;
+
+      return member;
+    });
 
     super({
       data,

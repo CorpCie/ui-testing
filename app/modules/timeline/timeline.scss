@@ -34,7 +34,7 @@
     }
 
     .timeline-image {
-      @include background("dark-blue");
+      @include background("blue", "dark");
       left: 50%;
       width: $logoSize;
       height: $logoSize;

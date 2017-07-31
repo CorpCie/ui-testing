@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
 
 import {InternationalizationModule} from '../internationalization/translate.module';
 
@@ -15,7 +16,8 @@ ApimockModule.annotations = [
   new NgModule({
     imports: [
       InternationalizationModule,
-      RouterModule.forChild(apimockRoutes)
+      RouterModule.forChild(apimockRoutes),
+      HttpClientModule
     ],
     declarations: [
       ApimockComponent

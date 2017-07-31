@@ -31,6 +31,11 @@ module.exports = gulp.task('connect', ['i18n'], () => {
     notify: false,
     server: {baseDir: 'dist'},
     middleware: [
+      {
+        route: '/myapi', // api routes start for all your uris
+        handle: routesMapping.middleware // API specifications (created by ApiMocks instance)
+      },
+      historyApiFallback(),
       webpackDevMiddelware(compiler, {
         hot: true,
         stats: {
@@ -42,12 +47,7 @@ module.exports = gulp.task('connect', ['i18n'], () => {
         },
         publicPath: config.output.publicPath
       }),
-      webpackHotMiddelware(compiler),
-      {
-        route: '/myapi', // api routes start for all your uris
-        handle: routesMapping.middleware // API specifications (created by ApiMocks instance)
-      },
-      historyApiFallback()
+      webpackHotMiddelware(compiler)
     ]
   });
 });
